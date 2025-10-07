@@ -33,4 +33,16 @@ describe("QueryProcessor", () => {
             "rstamm"
           ));
     })
+
+    test('should return sum of two numbers', () => {
+        const query = "What is 5 plus 3?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe("8");
+    });
+
+    test('should return largest number', () => {
+        const query = "What is the largest of 3, 7, and 5?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe("7");
+    });
 });
