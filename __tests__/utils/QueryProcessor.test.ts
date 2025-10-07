@@ -45,4 +45,16 @@ describe("QueryProcessor", () => {
         const response: string = QueryProcessor(query);
         expect(response).toBe("7");
     });
+
+    test('should return smallest number', () => {
+        const query = "What is the smallest of 3, 7, and 5?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe("3");
+    });
+
+    test('should return difference of two numbers', () => {
+        const query = "What is 10 minus 4?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe("6");
+    });
 });
