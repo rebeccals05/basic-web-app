@@ -23,6 +23,16 @@ export default function QueryProcessor(query: string): string {
       return (num1 + num2).toString();
     }
   }
-  
+
+  if (query.includes("largest")) {
+    const numbers = query.match(/[+-]?\d+(?:\.\d+)?/g);
+    if (numbers && numbers.length > 0) {
+      const vals = numbers.map((n) => parseFloat(n));
+      const max = Math.max(...vals);
+      if (Number.isInteger(max)) return max.toString();
+      return parseFloat(max.toFixed(8)).toString();
+    }
+  }
+
   return "";
 }
